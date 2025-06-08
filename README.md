@@ -35,11 +35,18 @@ Early stopping და Gradient clipping
 სხვადასხვა Dropout მაჩვენებლები შერჩეულია ფენის სიღრმის შესაბამისად (0.1 → 0.35).
 AlphaDropout გამოყენებულია კლასიფიკაციის ფენაში Self-Normalizing Network სტაბილურობისთვის.
 
+Train Accuracy: ~74%
+
+Test Accuracy: 64.39%
+
 Best Validation Accuracy: 0.6684
 Training Accuracy	64.01%(წინსვლაა)
 
 
 მეოთხე მოდელი:
-
+Batch Normalization აუმჯობესებს კონვერგენციას და სტაბილურობას. ამცირებს Internal Covariate Shift-ს.
+უკეთ მუშაობს მაღალი learning rate-ით — შენ სწორად დააყენე lr=0.05.
+უმჯობესდება generalization, label_smoothing=0.1.
+RandomHorizontalFlip() და RandomRotation(10) + batch_size=128 → უკეთესი batch statistics BatchNorm-სთვის.
 
 
